@@ -1,6 +1,7 @@
 /*
  * Please refer to https://docs.envio.dev for a thorough guide on all Envio indexer features
  */
+import { createDummyData } from "./utils/DummyData";
 import {
   CreatureBoringToken,
   Monster,
@@ -8,8 +9,15 @@ import {
   Trader
 } from "generated";
 
+let hasRun = false;
+
 CreatureBoringToken.Trade.handler(async ({ event, context }) => { 
   
+if (!hasRun) {
+    hasRun = true;
+    await createDummyData(context);
+  }
+
   const { trader, isBuy,  amount, ethAmount, protocolFee } = event.params 
   const { hash } = event.transaction
   const { srcAddress, logIndex } = event

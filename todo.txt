@@ -1,6 +1,7 @@
 - [] Index Factory contract and dynamically create CreatureBoringToken contracts  
 - [] Update README.md 
 - [] Add hosted service deployment instructions
+- [] Change Trades Token to Monster 
 - [] GlobalStats entity 
         - protocolFees
         - monsters
